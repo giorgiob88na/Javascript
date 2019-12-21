@@ -2,7 +2,6 @@
 // This script shows elements on checked options, at least one, true. 
 //This also places elements on the left of screen
 
-
 <script>
 function myfunction() {
 var g= document.getElementById("vei");
