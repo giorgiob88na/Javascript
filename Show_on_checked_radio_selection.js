@@ -1,17 +1,17 @@
 
-// This script shows elements on radio, checked options, true. 
+// This script shows elements on radio checked, true. 
 //This also places elements on the left of screen
 
 <script>
 function myfunction() {
 var g= document.getElementById("vei");
-var y=  document.getElementById("auto").checked; // Options
+var y=  document.getElementById("auto").checked; // Retrieve check of radio buttons
 var z=  document.getElementById("moto").checked;
 var t=  document.getElementById("furgo").checked;
 var o= document.getElementById("InseVei"); //Elements to show on selection
 var x = document.getElementById("macchina");
 var b= document.getElementById("forma");
-if( y==true || z==true || t==true){
+if( y==true || z==true || t==true){ 
 
   x.style.display = "block";
   o.style.display="block";
