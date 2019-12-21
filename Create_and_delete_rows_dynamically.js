@@ -1,20 +1,27 @@
 // This script adds and eliminates rows dynamically except first 2 rows that are necessarily to insert fields for a maintenance
-// document                                                       __________  _________  ________ ___________
-/*The table has this structure: Car maintenance document and has | Name/Code|Quantities|Discount|Final price|  FIRST ROW  Block
+// document   
+//								  __________  _________  ________ ___________
+/*The table has this structure: Car documents with theese fields | Name/Code|Quantities|Discount|Final price|  FIRST ROW:Block
                                                                   ---------  --------  --------- ------------
-																																 |__Field____|__Field__|__Field_|__Field____|  SECOND ROW
-																																 			.						.			    .					.						.
-																																			.						.			    .					.						.
-																																			.						.			    .					.						.
-																																			.						.			    .					.						.
-																																			.						.			    .					.						.
-																																			.						.			    .					.						.
-																																			.						.			    .					.						.
+								 |__Value___||__Value__|__Value__|__Value___|  SECOND ROW:Block
+								 	.	.	   .	     .		  .  Add/Remove
+									.	.	   .	     .		  .
+									.	.	   .	     .		  .
+									.	.	   .	     .		  .
+									.	.	   .	     .		  .
+									.	.	   .	     .		  .
+									.	.	   .	     .		  .
+									.	.	   .	     .		  .
+									.	.	   .	     .		  .
+									.	.	   .	     .		  .
+								
+																																		.						.			    .					.						.
 */
 
 
 
-//Challenges: Add code that, for every cell, this one has a distinct name  generated automatically retrievable from  server 
+//Challenges: Add code that, for Name/Code cell, this one has a distinct name  generated automatically retrievable from  server
+//and displayed in a list HTML
 
 
 <script>
@@ -74,13 +81,12 @@ cell3.appendChild(element3);");
 var cell4 = row.insertCell(4);");
 var element4 = document.createElement(\"input\");");
 element4.type = \"text\" ;");
-element4.name=\"txtbox4[]\";");
-element4.id=\"txtbox4[]\";");
-element4.required=\"true\";");
-element4.style=\"text-align:center;\";");
-element4.setAttribute(\"onchange\",textbox);");
-//element4.onchange=textbox;");
-// Cosi' pare funzioni
+element4.name="txtbox4[]";
+element4.id=\"txtbox4[]";
+element4.required="true";
+element4.style="text-align:center;";
+element4.setAttribute("onchange",textbox);//Add a script attribute in creation of this one
+
 
 cell4.appendChild(element4);");
 
@@ -93,14 +99,13 @@ function deleteRow(tab) {
 		var table = document.getElementById(\"tab\");
       var rowCount = table.rows.length;
 //for(var i=0; i<rowCount; i++) {
-		if( rowCount > 2 ) { //Condizione per NON cancellare la riga con le intestazioni
+		if( rowCount > 2 ) { //Condition to avoid deleting first two rows
 				table.deleteRow(rowCount-1);
 				rowCount--;
-//********Codice precedente che eliminava una riga se la casella era checked, a me serviva che cancellasse a prescindere********
-				//out.println("i--;");
+/*Previous instruction, taken by Internet, that deleted a row if the box was checked, in my example the sw has to delete regardless
+				i--;*/
 				}
-//count=i;
-  //}
+
 		  }catch(e) {
 			  alert(e);
 		    }
