@@ -1,5 +1,5 @@
 
-// This script shows elements on checked options, at least one, true. 
+// This script shows elements on radio, checked options, true. 
 //This also places elements on the left of screen
 
 <script>
